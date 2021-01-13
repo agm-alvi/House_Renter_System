@@ -10,18 +10,23 @@ include 'connection.php';
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<style type="text/css">
+		
 		label{
 left: 20px;
+		}
+		.form{
+			margin-left: 50px;
 		}
 	</style>
 </head>
 <body>
-<header>
+
+	  <?php include 'header.php';?>
         <h1>Find Nest | Contacts</h1>
-</header>
+
 
 <div>
-	<form class="" action="Contact.php" method="post">
+	<form class="form" action="Contact.php" method="post">
 		<label>Name:</label> <input type="text" name="name" placeholder="Name" required><br>
 		<label>Email:</label> <input type="Email" name="email" placeholder="Email" required><br>
 		<label>Comments:</label> <textarea rows="10" cols="20" name="comments" required></textarea><br>
@@ -49,8 +54,7 @@ if($name != ""){
 mysqli_close($conn);
 }
 ?>
-
-<footer style="text-align: center;">&copy 2021 Find Nest. All Rights Reserved</footer>
+<?php include 'footer.php';?>
 </body>
 </html>
 
