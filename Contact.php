@@ -38,7 +38,7 @@ $comments = $_POST['comments'];
 
 if($name != ""){
 	if (mysqli_query($conn,  "INSERT INTO Contact (name, email, comments) VALUES ('$name', '$email', '$comments')")) {
-	echo "Thanks for your precious Response";
+	echo "Thanks for your precious ";
 	} else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
