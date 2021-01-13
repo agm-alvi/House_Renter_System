@@ -30,8 +30,8 @@ session_destroy();
 
     <body>
         <header>
-              <?php include 'header.php';?>
-            <h1>Find Nest | Renter Registration</h1> </header>
+            <?php include 'header.php';?>
+                <h1>Find Nest | Renter Registration</h1> </header>
         <div>
             <form name="LoginForms" class="" action="Registration_renter.php" method="POST" onsubmit="return validateForm();">
                 <label>Name:</label>
@@ -111,7 +111,7 @@ if($fname != ""){
 mysqli_close($conn);
 }
 ?>
-   <?php include 'footer.php'; ?>
+            <?php include 'footer.php'; ?>
     </body>
     <script type="text/javascript">
         function validateForm() {
