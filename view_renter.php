@@ -35,7 +35,7 @@ $result = mysqli_query($conn, $result);
 
     <style type="text/css">
         body {
-            background-color: lightgreen;
+            background-color: lightskyblue;
         }
 
         input {
