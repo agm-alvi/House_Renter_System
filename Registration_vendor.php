@@ -110,7 +110,8 @@ if($fname != ""){
 mysqli_close($conn);
 }
 ?>
-            <footer style="text-align: center;">&copy 2021 FindNest. All Rights Reserved</footer>
+
+      <?php include 'footer.php'; ?>  
     </body>
     <script type="text/javascript">
         function validateForm() {
