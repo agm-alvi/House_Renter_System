@@ -30,6 +30,7 @@ session_destroy();
 
     <body>
         <header>
+              <?php include 'header.php';?>
             <h1>Find Nest | Renter Registration</h1> </header>
         <div>
             <form name="LoginForms" class="" action="Registration_renter.php" method="POST" onsubmit="return validateForm();">

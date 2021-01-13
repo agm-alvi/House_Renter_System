@@ -51,6 +51,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
 </head>
 <body>
 <header>
+      <?php include 'header.php';?>
             <h1>Find Nest | Vendor Log In</h1> </header>
         <div>
                         <form action="login_vendor.php" method="post">

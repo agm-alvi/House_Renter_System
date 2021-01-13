@@ -44,6 +44,7 @@ console.log(str);
 <body>
 
 	<header>
+      <?php include 'header.php';?>
         <h1>Find Nest | Dashboard</h1>
 	</header>
 

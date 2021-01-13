@@ -52,6 +52,7 @@ $result = mysqli_query($conn, $result);
     <?php //include 'Header.php'; ?>
 
     <header>
+          <?php include 'header.php';?>
         <h1>Find Nest | Renter List</h1>
     </header>
     <div>

@@ -23,7 +23,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
       }
       if($username =="admin")
       {
-        header('Location: admin.php');
+        header('Location: admin_profile.php');
       }else{
         header('Location: renters_profile.php');
       }
@@ -51,6 +51,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
 </head>
 <body>
 <header>
+  <?php include 'header.php';?>
             <h1>Find Nest | Renter Log In</h1> </header>
         <div>
                         <form action="login_renter.php" method="post">
