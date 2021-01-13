@@ -17,11 +17,10 @@ if(empty($_SESSION["username"]))
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
 	<title>Dashboard | Find Nest</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
         <style type="text/css">
             body {
                 background-color: snow;
@@ -69,8 +68,9 @@ include 'DBManager.php';
 echo fetch('');
 ?>
 </table>
+    </div>
 <a href="Logout.php">Logout</a>
-        </div>
+        
     </div>
 	<footer style="text-align: center;">&copy 2021 Find Nest. All Rights Reserved</footer>
 </body>
@@ -85,7 +85,7 @@ document.getElementById('searchTable').innerHTML =
 this.responseText;
 }
 }
-xmlhttp.open("GET","Dashboard.php?search="+str,true);
+xmlhttp.open("GET","DBManager.php?search="+str,true);
 xmlhttp.send();
 }
 </script>
