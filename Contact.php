@@ -1,41 +1,44 @@
-
 <?php
 include 'connection.php';
 
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Contact | Find Nest</title>
 
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<style type="text/css">
-		
-		label{
-left: 20px;
-		}
-		.form{
-			margin-left: 50px;
-		}
-	</style>
+<head>
+    <title>Contact | Find Nest</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+        label {
+            left: 20px;
+        }
+
+        h1,
+        .form {
+            margin-left: 50px;
+        }
+
+    </style>
 </head>
+
 <body>
 
-	  <?php include 'header.php';?>
-        <h1>Find Nest | Contacts</h1>
+    <?php include 'header.php';?>
+    <h1>Find Nest | Contacts</h1>
 
 
-<div>
-	<form class="form" action="Contact.php" method="post">
-		<label>Name:</label> <input type="text" name="name" placeholder="Name" required><br>
-		<label>Email:</label> <input type="Email" name="email" placeholder="Email" required><br>
-		<label>Comments:</label> <textarea rows="10" cols="20" name="comments" required></textarea><br>
-		<input type="Submit" name="" value="Submit">
+    <div>
+        <form class="form" action="Contact.php" method="post">
+            <label>Name:</label> <input type="text" name="name" placeholder="Name" required><br>
+            <label>Email:</label> <input type="Email" name="email" placeholder="Email" required><br>
+            <label>Comments:</label> <textarea rows="10" cols="20" name="comments" placeholder="message...." required></textarea><br>
+            <input type="Submit" name="" value="Submit">
 
-	</form>
-</div>
+        </form>
+    </div>
 
-<?php
+    <?php
 if(isset($_POST['name'])){
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -54,7 +57,7 @@ if($name != ""){
 mysqli_close($conn);
 }
 ?>
-<?php include 'footer.php';?>
+    <?php include 'footer.php';?>
 </body>
-</html>
 
+</html>
