@@ -104,7 +104,7 @@ $result = mysqli_query($conn, $result);
                     ?>
         </table>
     </div>
-    <?php //include 'Footer.php'; ?>
+   <?php include 'footer.php'; ?>
 </body>
 
 </html>
