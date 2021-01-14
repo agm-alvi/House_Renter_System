@@ -10,11 +10,11 @@ include 'connection.php';
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <style type="text/css">
-        label {
-            left: 20px;
-        }
-
-        h1,
+        
+       
+h1{
+    text-align: center;
+}
         .form {
             margin-left: 50px;
         }
