@@ -62,7 +62,7 @@ $comments = $_POST['comments'];
 
 if($houseID != ""){
 
-	if ((mysqli_query($conn,  "INSERT INTO `favourites`(hID, rID, comments) VALUES ('$houseID','$renterID','$comments')")) && (mysqli_query($conn,  "UPDATE vendors SET houseListed=houseListed+1 WHERE vendorID= '$vendorID'"))) {
+	if (mysqli_query($conn,  "INSERT INTO favourites(hID, rID, comments) VALUES ('$houseID','$renterID','$comments')")) {
 	echo "New House added successfully";
 	} else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
