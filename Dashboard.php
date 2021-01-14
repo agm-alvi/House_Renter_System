@@ -42,9 +42,9 @@ if(empty($_SESSION["username"]))
     </head>
 
     <body>
-        <header>
+
             <?php include 'header.php';?>
-                <h1>Find Nest | Dashboard</h1> </header>
+                <h1>Find Nest | Dashboard</h1> 
         <div>
             <h1>You are Logged In</h1> </div>
         <div>
