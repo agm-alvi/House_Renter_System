@@ -1,14 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "findnest";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-
-if (!$conn) {
-die("Connection failed: " . mysqli_connect_error());
-}
+include 'connection.php';
 /*
 session_start();
 if(empty($_SESSION["username"]))
