@@ -1,12 +1,6 @@
 <?php
 function conectionStart()
-{/*
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "testDB";
-$connection = mysqli_connect($servername, $username, $password,
-$dbname);*/
+{
  $servername = "localhost";
   $username = "root";
   $password = "";
@@ -22,7 +16,7 @@ mysqli_close($value);
 function fetch($value='')
 {
 $connection = conectionStart();
-$sql = "SELECT * FROM Contact WHERE name LIKE '%".$value."%' OR
+$sql = "SELECT * FROM contact WHERE name LIKE '%".$value."%' OR
 email LIKE '%".$value."%' OR comments LIKE '%".$value."%'";
 $result = mysqli_query($connection, $sql);
 if($result) {
