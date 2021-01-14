@@ -29,63 +29,62 @@ session_destroy();
     </head>
 
     <body>
-        <header>
-            <?php include 'header.php';?>
-                <h1>Find Nest | Vendor Registration</h1> </header>
-        <div>
-            <form name="LoginForms" class="" action="Registration_vendor.php" method="POST" onsubmit="return validateForm();">
-                <label>Name:</label>
-                <input type="text" name="fullName" value="" placeholder="Name">
-                <label id="nameError"></label>
-                <br>
-                <label>Username:</label>
-                <input type="text" name="uname" value="" placeholder="Username">
-                <label id="usernameError"></label>
-                <br>
-                <label>Password:</label>
-                <input type="password" name="psw" value="" placeholder="Password">
-                <label id="passwordError"></label>
-                <br>
-                <label>Re-type password:</label>
-                <input type="password" name="repsw" value="" placeholder="Re-type Password">
-                <label id="repasswordError"></label>
-                <br>
-                <label>Gender:</label>
-                <input type="radio" name="gender" id="gender" value="Male">
-                <label>Male</label>
-                <input type="radio" name="gender" id="gender" value="Female">
-                <label>Female</label>
-                <input type="radio" name="gender" id="gender" value="Other">
-                <label>Other</label>
-                <label id="genderError"></label>
-                <br>
-                <label>Contact no:</label>
-                <input type="text" name="contact" value="" placeholder="Contact No">
-                <label id="contactError"></label>
-                <br>
-                <label>Email:</label>
-                <input type="Email" name="email" value="" placeholder="Email@example.com">
-                <br>
-                <label>Location:</label>
-                <select name="location">
-                    <option value="">Select Location</option>
-                    <option value="Old Dhaka" name="location">Old Dhaka</option>
-                    <option value="Uttara" name="location">Uttara</option>
-                    <option value="Rampura" name="location">Rampura</option>
-                    <option value="Mirpur" name="location">Mirpur</option>
-                    <option value="Khilgao" name="location">Khilgao</option>
-                    <option value="Moghbazar" name="location">Moghbazar</option>
-                    <option value="Jatrabari" name="location">Jatrabari</option>
-                    <option value="Dhanmondi" name="location">Dhanmondi</option>
-                    <option value="Mohammadpur" name="location">Mohammadpur</option>
-                    <option value="Farmgate" name="location">Farmgate</option>
-                    <option value="Baridhara" name="location">Baridhara</option>
-                </select>
-                <label id="locationError"></label>
-                <br>
-                <input type="Submit" name="" value="Submit"> </form>
-        </div>
-        <?php
+        <?php include 'header.php';?>
+            <h1>Find Nest | Vendor Registration</h1>
+            <div>
+                <form name="LoginForms" class="" action="Registration_vendor.php" method="POST" onsubmit="return validateForm();">
+                    <label>Name:</label>
+                    <input type="text" name="fullName" value="" placeholder="Name">
+                    <label id="nameError"></label>
+                    <br>
+                    <label>Username:</label>
+                    <input type="text" name="uname" value="" placeholder="Username">
+                    <label id="usernameError"></label>
+                    <br>
+                    <label>Password:</label>
+                    <input type="password" name="psw" value="" placeholder="Password">
+                    <label id="passwordError"></label>
+                    <br>
+                    <label>Re-type password:</label>
+                    <input type="password" name="repsw" value="" placeholder="Re-type Password">
+                    <label id="repasswordError"></label>
+                    <br>
+                    <label>Gender:</label>
+                    <input type="radio" name="gender" id="gender" value="Male">
+                    <label>Male</label>
+                    <input type="radio" name="gender" id="gender" value="Female">
+                    <label>Female</label>
+                    <input type="radio" name="gender" id="gender" value="Other">
+                    <label>Other</label>
+                    <label id="genderError"></label>
+                    <br>
+                    <label>Contact no:</label>
+                    <input type="text" name="contact" value="" placeholder="Contact No">
+                    <label id="contactError"></label>
+                    <br>
+                    <label>Email:</label>
+                    <input type="Email" name="email" value="" placeholder="Email@example.com">
+                    <br>
+                    <label>Location:</label>
+                    <select name="location">
+                        <option value="">Select Location</option>
+                        <option value="Old Dhaka" name="location">Old Dhaka</option>
+                        <option value="Uttara" name="location">Uttara</option>
+                        <option value="Rampura" name="location">Rampura</option>
+                        <option value="Mirpur" name="location">Mirpur</option>
+                        <option value="Khilgao" name="location">Khilgao</option>
+                        <option value="Moghbazar" name="location">Moghbazar</option>
+                        <option value="Jatrabari" name="location">Jatrabari</option>
+                        <option value="Dhanmondi" name="location">Dhanmondi</option>
+                        <option value="Mohammadpur" name="location">Mohammadpur</option>
+                        <option value="Farmgate" name="location">Farmgate</option>
+                        <option value="Baridhara" name="location">Baridhara</option>
+                    </select>
+                    <label id="locationError"></label>
+                    <br>
+                    <input type="Submit" name="" value="Submit"> </form>
+            </div>
+            <?php
 if(isset($_POST['uname'])){
 $fname = $_POST['fullName'];
 $uname = $_POST['uname'];
@@ -111,7 +110,7 @@ if($fname != ""){
 mysqli_close($conn);
 }
 ?>
-            <?php include 'footer.php'; ?>
+                <?php include 'footer.php'; ?>
     </body>
     <script type="text/javascript">
         function validateForm() {

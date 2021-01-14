@@ -33,12 +33,12 @@ if(isset($_POST['username']) && isset($_POST['password']))
   
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
+    <head>
         <title>Renter Log In | Find Nest</title>
- <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <style type="text/css">
             body {
                 background-color: lightgreen;
@@ -47,41 +47,34 @@ if(isset($_POST['username']) && isset($_POST['password']))
             input {
                 left: 100px;
             }
-        </style>    
-</head>
-<body>
-<header>
-  <?php include 'header.php';?>
-            <h1>Find Nest | Renter Log In</h1> </header>
-        <div>
-                        <form action="login_renter.php" method="post">
-                            
-                            
-                                <label for="username">Username:</label>
-                                <input type="text" class="form-control" id="username" name="username" required placeholder="Username"> 
-                            
-                                <label for="password">Password:</label>
-                                <input type="password" id="password" name="password" required placeholder="Password">
-                            
-                                <input type="checkbox" onclick="myFunction()"> &nbsp;Show Password 
-                            <button type="submit">Log In</button>
-                        </form>
-                    
-                    
-                        <p>Return to <a href="index.php">Home Page</a></p>
-                    </div>
-                
-</body>
+        </style>
+    </head>
 
-</html>
-<script type="text/javascript">
-    function myFunction() {
-        var x = document.getElementById("password");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
+    <body>
+        <?php include 'header.php';?>
+            <h1>Find Nest | Renter Log In</h1>
+            <div>
+                <form action="login_renter.php" method="post">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" name="username" required placeholder="Username">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required placeholder="Password">
+                    <input type="checkbox" onclick="myFunction()"> &nbsp;Show Password
+                    <button type="submit">Log In</button>
+                </form>
+                <p>Return to <a href="index.php">Home Page</a></p>
+            </div>
+    </body>
+
+    </html>
+    <script type="text/javascript">
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            }
+            else {
+                x.type = "password";
+            }
         }
-    }
-
-</script>
+    </script>
