@@ -52,6 +52,35 @@ session_destroy();
                     </select>
                     <label id="hTypeError"></label>
                     <br>
+                    <label>House No:</label>
+                    <input type="text" name="houseNo" value="" placeholder="House No">
+                    <label id="hNoError"></label>
+                    <br>
+                    <label>Street No:</label>
+                    <input type="text" name="streetNo" value="" placeholder="Street No">
+                    <label id="sNoError"></label>
+                    <br>
+                    <label>Area:</label>
+                    <input type="text" name="area" value="" placeholder="Area">
+                    <label id="areaError"></label>
+                    <br>
+                    <label>Location:</label>
+                    <select name="location">
+                        <option value="">Select Location</option>
+                        <option value="Old Dhaka" name="location">Old Dhaka</option>
+                        <option value="Uttara" name="location">Uttara</option>
+                        <option value="Rampura" name="location">Rampura</option>
+                        <option value="Mirpur" name="location">Mirpur</option>
+                        <option value="Khilgao" name="location">Khilgao</option>
+                        <option value="Moghbazar" name="location">Moghbazar</option>
+                        <option value="Jatrabari" name="location">Jatrabari</option>
+                        <option value="Dhanmondi" name="location">Dhanmondi</option>
+                        <option value="Mohammadpur" name="location">Mohammadpur</option>
+                        <option value="Farmgate" name="location">Farmgate</option>
+                        <option value="Baridhara" name="location">Baridhara</option>
+                    </select>
+                    <label id="locationError"></label>
+                    <br>
                     <label>Bachelors Allowed:</label>
                     <input type="radio" name="bachelor" value="true">
                     <label>Yes</label>
@@ -74,23 +103,6 @@ session_destroy();
                     <input type="radio" name="genderAllowance" value="Only Female">
                     <label>Only Female</label>
                     <label id="genderAllowanceError"></label>
-                    <br>
-                    <label>Location:</label>
-                    <select name="location">
-                        <option value="">Select Location</option>
-                        <option value="Old Dhaka" name="location">Old Dhaka</option>
-                        <option value="Uttara" name="location">Uttara</option>
-                        <option value="Rampura" name="location">Rampura</option>
-                        <option value="Mirpur" name="location">Mirpur</option>
-                        <option value="Khilgao" name="location">Khilgao</option>
-                        <option value="Moghbazar" name="location">Moghbazar</option>
-                        <option value="Jatrabari" name="location">Jatrabari</option>
-                        <option value="Dhanmondi" name="location">Dhanmondi</option>
-                        <option value="Mohammadpur" name="location">Mohammadpur</option>
-                        <option value="Farmgate" name="location">Farmgate</option>
-                        <option value="Baridhara" name="location">Baridhara</option>
-                    </select>
-                    <label id="locationError"></label>
                     <br>
                     <input type="Submit" name="" value="Submit"> </form>
             </div>
