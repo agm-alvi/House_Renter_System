@@ -13,7 +13,7 @@ if(empty($_SESSION["username"]))
 }
 */
 
-$result = "SELECT * FROM favourites f ORDER BY f.fid ASC";
+$result = "SELECT * FROM favourites f ORDER BY f.fID ASC";
 $result = mysqli_query($conn, $result);
 
 ?>
