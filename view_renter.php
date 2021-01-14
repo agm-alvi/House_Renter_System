@@ -37,12 +37,10 @@ $result = mysqli_query($conn, $result);
                 background-color: lightskyblue;
             }
             
-            input {
-                left: 100px;
-            }
-            
             table {
                 width: 100%;
+                left: 10px;
+                text-align: center;
             }
         </style>
     </head>

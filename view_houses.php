@@ -36,7 +36,7 @@ $result = mysqli_query($conn, $result);
             body {
                 background-color: lightsalmon;
             }
-                        
+            
             table {
                 width: 100%;
                 left: 10px;
@@ -76,10 +76,9 @@ $result = mysqli_query($conn, $result);
                                     <?php echo $res['house_no']." ".$res['street_no']." ".$res['area']; 
                                     ?>
                                 </td>
-                                 <td>
+                                <td>
                                     <?php echo $res['location'];?>
                                 </td>
-
                                 <td>
                                     <?php echo $res['genderAllowance']; ?>
                                 </td>
