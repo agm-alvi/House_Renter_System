@@ -32,7 +32,7 @@ session_destroy();
         <?php include 'header.php';?>
             <h1>Find Nest | House Registration</h1>
             <div>
-                <form name="LoginForms" class="" action="addHouse.php" method="POST" onsubmit="return validateForm();">
+                <form name="addHouseForms" class="" action="addHouse.php" method="POST" onsubmit="return validateForm();">
                     <label>Vendor ID:</label>
                     <input type="text" name="vendorID" value="" placeholder="Vendor ID">
                     <label id="vidError"></label>
@@ -108,7 +108,6 @@ session_destroy();
                     <input type="text" name="houseDetails" value="" placeholder="Notes about House">
                     <label id="houseDetailsError"></label>
                     <br>
-                    
                     <input type="Submit" name="" value="Submit"> </form>
             </div>
             <?php
@@ -128,8 +127,8 @@ $houseDetails = $_POST['houseDetails'];
 
 if($vendorID != ""){
 	if (mysqli_query($conn,  "
-INSERT INTO houselist( houseType, houseDetails, house_no, street_no, area, location, garage, bachelors, genderAllowance, vID, fav1ID, `fav2ID`, `fav3ID`) VALUES ('$hType','$houseDetails','$houseNo','$streetNo','$area','$location','$garage','$bachelor','$gAllow','$houseDetails')")) {
-	echo "New record created successfully";
+INSERT INTO houselist( houseType, houseDetails, house_no, street_no, area, location, garage, bachelors, genderAllowance, vID) VALUES ('$hType','$houseDetails','$houseNo','$streetNo','$area','$location','$garage','$bachelor','$gAllow','$houseDetails', '$vendorID')")) {
+	echo "New House added successfully";
 	} else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
@@ -144,12 +143,12 @@ mysqli_close($conn);
     </body>
     <script type="text/javascript">
         function validateForm() {
-            var name = document.forms["LoginForms"]["fullName"].value;
-            var username = document.forms["LoginForms"]["uname"].value;
-            var password = document.forms["LoginForms"]["psw"].value;
-            var contact = document.forms["LoginForms"]["contact"].value;
-            var gender = document.forms["LoginForms"]["gender"].value;
-            var location = document.forms["LoginForms"]["location"].value;
+            var name = document.forms["addHouseForms"]["fullName"].value;
+            var username = document.forms["addHouseForms"]["uname"].value;
+            var password = document.forms["addHouseForms"]["psw"].value;
+            var contact = document.forms["addHouseForms"]["contact"].value;
+            var gender = document.forms["addHouseForms"]["gender"].value;
+            var location = document.forms["addHouseForms"]["location"].value;
             var flag = true;
             if (name == "") {
                 document.getElementById('nameError').innerHTML = "Name cannot be empty";
