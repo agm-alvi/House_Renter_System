@@ -55,6 +55,7 @@ $result = mysqli_query($conn, $result);
                     </thead>
                     <?php 
                     while($res = mysqli_fetch_array($result)) { 
+                        if($res['vendorID']!=0) {
                     ?>
                         <tbody>
                             <tr>
@@ -86,6 +87,7 @@ $result = mysqli_query($conn, $result);
                         </tbody>
                         <?php   
                     }
+                }
                     ?>
                 </table>
             </div>
