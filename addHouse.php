@@ -88,16 +88,16 @@ session_destroy();
             <label id="locationError"></label>
             <br>
             <label>Bachelors Allowed:</label>
-            <input type="radio" name="bachelor" value="true">
+            <input type="radio" name="bachelor" value="TRUE">
             <label>Yes</label>
-            <input type="radio" name="bachelor" value="false">
+            <input type="radio" name="bachelor" value="FALSE">
             <label>No</label>
             <label id="bachelorError"></label>
             <br>
             <label>Garage Availabe:</label>
-            <input type="radio" name="garage" value="true">
+            <input type="radio" name="garage" value="TRUE">
             <label>Yes</label>
-            <input type="radio" name="garage" value="false">
+            <input type="radio" name="garage" value="FALSE">
             <label>No</label>
             <label id="garageError"></label>
             <br>
@@ -132,13 +132,8 @@ $houseDetails = $_POST['houseDetails'];
 
 
 if($vendorID != ""){
-	if (mysqli_query($conn,  "INSERT INTO houselist( houseType, houseDetails, house_no, street_no, area, location, garage, bachelors, genderAllowance, vID) VALUES ('$hType','$houseDetails','$houseNo','$streetNo','$area','$location','$garage','$bachelor','$gAllow', '$vendorID')")) {
+	if ((mysqli_query($conn,  "INSERT INTO houselist( houseType, houseDetails, house_no, street_no, area, location, garage, bachelors, genderAllowance, vID) VALUES ('$hType','$houseDetails','$houseNo','$streetNo','$area','$location',$garage,$bachelor,'$gAllow','$vendorID')")) && (mysqli_query($conn,  "UPDATE vendors SET houseListed=houseListed+1 WHERE vendorID= '$vendorID'"))) {
 	echo "New House added successfully";
-	} else {
-	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-	}
-    if (mysqli_query($conn,  "UPDATE vendors SET houseListed=houseListed+1 WHERE vendorID= '$vendorID'")) {
-	echo "Increment successful";
 	} else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
