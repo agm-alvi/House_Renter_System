@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $result);
     <html>
 
     <head>
-        <title>Renter List | Find Nest</title>
+        <title>House List | Find Nest</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <style type="text/css">
             body {
