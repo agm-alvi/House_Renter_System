@@ -1,31 +1,39 @@
 body {
-	background-color: aliceblue;
+    background-color: aliceblue;
 }
-@media only screen and (max-width: 700px) {
-body {
-	background-color: yellow;
-	
 
-}
+@media only screen and (max-width: 700px) {
+    body {
+        background-color: yellow;
+    }
 }
 
 @media only screen and (max-width: 500px) {
-body {
-	background-color: aqua;
-}
+    body {
+        background-color: aqua;
+    }
 }
 
-table{
-  border-collapse: collapse;
-  margin: 5px 0px;
+table {
+    border-collapse: collapse;
+    margin: 5px 0px;
 }
-th, td, tr{
-	border: 3px solid black;
-	padding: 5px 2px;
+
+th,
+td,
+tr {
+    border: 3px solid black;
+    padding: 5px 2px;
 }
-footer{
-	font-weight: bold;
-	border: 2px dotted red;
-	box-shadow: 2px 2px 5px 5px red;
-	margin-top: 15px;
+
+footer {
+    font-weight: bold;
+    border: 2px dotted red;
+    box-shadow: 2px 2px 5px 5px red;
+    margin-top: 15px;
+}
+
+h1,
+.form {
+    margin-left: 50px;
 }
