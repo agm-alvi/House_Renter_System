@@ -104,18 +104,26 @@ session_destroy();
                     <label>Only Female</label>
                     <label id="genderAllowanceError"></label>
                     <br>
+                    <label>House Details:</label>
+                    <input type="text" name="houseDetails" value="" placeholder="Notes about House">
+                    <label id="houseDetailsError"></label>
+                    <br>
+                    
                     <input type="Submit" name="" value="Submit"> </form>
             </div>
             <?php
-if(isset($_POST['uname'])){
-$fname = $_POST['fullName'];
-$uname = $_POST['uname'];
-$psw = $_POST['psw'];
-$gender = $_POST['gender'];
-
-$contact = $_POST['contact'];
-$email = $_POST['email'];
+if(isset($_POST['vendorID'])){
+$vendorID = $_POST['vendorID'];
+$hType = $_POST['hType'];
+$houseNo = $_POST['houseNo'];
+$streetNo = $_POST['streetNo'];
+$area = $_POST['area'];
 $location = $_POST['location'];
+$bachelor = $_POST['bachelor'];
+$garage = $_POST['garage']; 
+$gAllow = $_POST['genderAllowance'];  
+$houseDetails = $_POST['houseDetails'];  
+
 
 
 
