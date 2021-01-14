@@ -53,33 +53,28 @@ session_destroy();
                     <label id="hTypeError"></label>
                     <br>
                     <label>Bachelors Allowed:</label>
-                <input type="radio" name="bachelor" value="true">
-                <label>Yes</label>
-                <input type="radio" name="bachelor" value="false">
-                <label>No</label>
-                <label id="bachelorError"></label>
-                <br>
+                    <input type="radio" name="bachelor" value="true">
+                    <label>Yes</label>
+                    <input type="radio" name="bachelor" value="false">
+                    <label>No</label>
+                    <label id="bachelorError"></label>
+                    <br>
                     <label>Garage Availabe:</label>
-                <input type="radio" name="garage" value="true">
-                <label>Yes</label>
-                <input type="radio" name="garage" value="false">
-                <label>No</label>
-                <label id="garageError"></label>
-                <br>
-                    
+                    <input type="radio" name="garage" value="true">
+                    <label>Yes</label>
+                    <input type="radio" name="garage" value="false">
+                    <label>No</label>
+                    <label id="garageError"></label>
+                    <br>
                     <label>Gender Allowance:</label>
-                
-                <input type="radio" name="genderAllowance" value="Both Male and Female">
-                <label>Both Male and Female</label>
-                    
+                    <input type="radio" name="genderAllowance" value="Both Male and Female">
+                    <label>Both Male and Female</label>
                     <input type="radio" name="genderAllowance" value="Only Male">
-                <label>Only Male</label>
-                <input type="radio" name="genderAllowance" value="Only Female">
-                <label>Only Female</label>
-                    
-                <label id="genderAllowanceError"></label>
-                <br>
-              
+                    <label>Only Male</label>
+                    <input type="radio" name="genderAllowance" value="Only Female">
+                    <label>Only Female</label>
+                    <label id="genderAllowanceError"></label>
+                    <br>
                     <label>Location:</label>
                     <select name="location">
                         <option value="">Select Location</option>
