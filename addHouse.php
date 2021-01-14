@@ -18,13 +18,17 @@ session_destroy();
     <title>House Registration | Find Nest</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style type="text/css">
+        *{
+            margin-top: 5px;
+        }
         body {
             background-color: gold;
         }
 
-        h1,
+ 
         .form {
             margin-left: 50px;
+            
         }
 
     </style>
@@ -161,6 +165,11 @@ mysqli_close($conn);
         }
         if (hType == "") {
             document.getElementById('hTypeError').innerHTML = "House Type Must be selected";
+            flag = false;
+        }
+        
+        if (houseNo == "") {
+            document.getElementById('hNoError').innerHTML = "House No cannot be empty";
             flag = false;
         }
         if (location == "") {
