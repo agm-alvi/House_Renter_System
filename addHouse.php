@@ -143,59 +143,38 @@ mysqli_close($conn);
     </body>
     <script type="text/javascript">
         function validateForm() {
-            var name = document.forms["addHouseForms"]["fullName"].value;
-            var username = document.forms["addHouseForms"]["uname"].value;
-            var password = document.forms["addHouseForms"]["psw"].value;
-            var contact = document.forms["addHouseForms"]["contact"].value;
-            var gender = document.forms["addHouseForms"]["gender"].value;
+            var vendorID = document.forms["addHouseForms"]["vendorID"].value;
+            var hType = document.forms["addHouseForms"]["hType"].value;
+            var houseNo = document.forms["addHouseForms"]["houseNo"].value;
+            var streetNo = document.forms["addHouseForms"]["streetNo"].value;
+            var area = document.forms["addHouseForms"]["area"].value;
             var location = document.forms["addHouseForms"]["location"].value;
+            var garage = document.forms["addHouseForms"]["garage"].value;
+            var bachelor = document.forms["addHouseForms"]["bachelor"].value;
+            var genderAllowance = document.forms["addHouseForms"]["genderAllowance"].value;
             var flag = true;
-            if (name == "") {
-                document.getElementById('nameError').innerHTML = "Name cannot be empty";
+            if (vendorID == "") {
+                document.getElementById('vidError').innerHTML = "Vendor ID cannot be empty";
                 flag = false;
             }
-            if (username == "") {
-                document.getElementById('usernameError').innerHTML = "Username cannot be empty";
+            if (hType == "") {
+                document.getElementById('hTypeError').innerHTML = "House Type Must be selected";
                 flag = false;
-            }
-            else {
-                for (var i = 0; i < username.length; i++) {
-                    if (username[i] == ' ') {
-                        flag = false;
-                        document.getElementById('usernameError').innerHTML = "Username cannot contain whitespace";
-                        break;
-                    }
-                }
-            }
-            if (password == "") {
-                document.getElementById('passwordError').innerHTML = "Password cannot be empty";
-                flag = false;
-            }
-            else {
-                if (!(password.length >= 8 && password.length <= 32)) {
-                    flag = false;
-                    document.getElementById('passwordError').innerHTML = "Password Length must be within 8-32 chars";
-                }
-            }
-            if (gender == "") {
-                document.getElementById('genderError').innerHTML = "Gender must be selected";
-                flag = false;
-            }
-            if (contact == "") {
-                document.getElementById('contactError').innerHTML = "Contact cannot be empty";
-                flag = false;
-            }
-            else {
-                for (var i = 0; i < contact.length; i++) {
-                    if (!(contact[i] == '0' || contact[i] == '1' || contact[i] == '2' || contact[i] == '3' || contact[i] == '4' || contact[i] == '5' || contact[i] == '6' || contact[i] == '7' || contact[i] == '8' || contact[i] == '9')) {
-                        flag = false;
-                        document.getElementById('contactError').innerHTML = "Contact no contains number only";
-                        break;
-                    }
-                }
             }
             if (location == "") {
-                document.getElementById('locationError').innerHTML = "location must be selected";
+                document.getElementById('locationError').innerHTML = "Location Must be selected";
+                flag = false;
+            }
+            if (bachelor == "") {
+                document.getElementById('bachelorError').innerHTML = " Must be selected";
+                flag = false;
+            }
+            if (garage == "") {
+                document.getElementById('garageError').innerHTML = " Must be selected";
+                flag = false;
+            }
+            if (genderAllowance == "") {
+                document.getElementById('genderAllowanceError').innerHTML = " Must be selected";
                 flag = false;
             }
             return flag;
