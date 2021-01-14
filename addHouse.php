@@ -132,14 +132,19 @@ $houseDetails = $_POST['houseDetails'];
 
 
 if($vendorID != ""){
-	if (mysqli_query($conn,  "
-INSERT INTO houselist( houseType, houseDetails, house_no, street_no, area, location, garage, bachelors, genderAllowance, vID) VALUES ('$hType','$houseDetails','$houseNo','$streetNo','$area','$location','$garage','$bachelor','$gAllow','$houseDetails', '$vendorID')")) {
+	if (mysqli_query($conn,  "INSERT INTO houselist( houseType, houseDetails, house_no, street_no, area, location, garage, bachelors, genderAllowance, vID) VALUES ('$hType','$houseDetails','$houseNo','$streetNo','$area','$location','$garage','$bachelor','$gAllow','$houseDetails', '$vendorID')")) {
 	echo "New House added successfully";
 	} else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
+    if (mysqli_query($conn,  "UPDATE vendors SET houseListed=houseListed+1 WHERE vendorID= '$vendorID'")) {
+	echo "Increment successful";
+	} else {
+	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
+    
+    
 }
-
 
 
 mysqli_close($conn);
