@@ -126,9 +126,9 @@ $houseDetails = $_POST['houseDetails'];
 
 
 
-
-if($fname != ""){
-	if (mysqli_query($conn,  "INSERT INTO renters(username, fullname, password, gender, location, contact, email) VALUES ('$uname','$fname','$psw','$gender','$location','$contact','$email')")) {
+if($vendorID != ""){
+	if (mysqli_query($conn,  "
+INSERT INTO houselist( houseType, houseDetails, house_no, street_no, area, location, garage, bachelors, genderAllowance, vID, fav1ID, `fav2ID`, `fav3ID`) VALUES ('$hType','$houseDetails','$houseNo','$streetNo','$area','$location','$garage','$bachelor','$gAllow','$houseDetails')")) {
 	echo "New record created successfully";
 	} else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
