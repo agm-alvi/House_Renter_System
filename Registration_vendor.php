@@ -19,7 +19,7 @@ session_destroy();
         <link rel="stylesheet" type="text/css" href="style.css">
         <style type="text/css">
             body {
-                background-color: lightgreen;
+                background-color: skyblue;
             }
             
             input {
