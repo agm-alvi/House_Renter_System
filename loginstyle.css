@@ -36,8 +36,9 @@ input {
     
     background: rgba(0,0,0,.7);
     /* opacity: .6; */
-    margin-left: 55%;
-    margin-top: 10%;
+    margin-left: 35%;
+    margin-right: 25%;
+    margin-top: 15%;
     padding: 20px;
     color: white;
     box-shadow: -5px -6px 5px 5px #000000;
