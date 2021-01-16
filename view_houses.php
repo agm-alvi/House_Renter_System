@@ -1,21 +1,25 @@
 <?php
 include 'connection.php';
-/*
+
 session_start();
 if(empty($_SESSION["username"]))
 {
-  header('Location: index.php');
-}else{
-  if($_SESSION["username"] != "admin")
-  {
-    header('Location: login_vendor.php');
-  }
+  header('Location: login_renter.php');
 }
-*/
 
+
+$msg="";
 $result = "SELECT * FROM houselist h ORDER BY h.houseID ASC";
 $result = mysqli_query($conn, $result);
 
+if(isset($_POST['submit']))
+{
+  $hid =$_POST['addFav'];
+  $addToFav = "INSERT INTO favourites(hID, rID) VALUES ('$hid','$renterID')";
+  if ($conn->query($addToFav) === TRUE) {
+    $msg="successfully Added to Favorites";
+  }
+}
 ?>
     <!DOCTYPE html>
     <html>
@@ -38,6 +42,17 @@ $result = mysqli_query($conn, $result);
 
     <body>
         <?php include 'header.php';?>
+        <?php
+          if(isset($_POST['submit']))
+          { 
+          ?>
+          <div>
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <?php echo $msg;?>
+          </div>
+          <?php
+          }
+      ?>
             <h1>Find Nest | House List</h1>
             <div>
                 <table>
@@ -47,9 +62,10 @@ $result = mysqli_query($conn, $result);
                             <th>House Type</th>
                             <th>Address</th>
                             <th>Location</th>
-                            <th>Gender Allowance</th>
                             <th>Details</th>
                             <th>Notes</th>
+                            <th>Action</th>
+                            
                         </tr>
                     </thead>
                     <?php 
@@ -71,24 +87,57 @@ $result = mysqli_query($conn, $result);
                                     <?php echo $res['location'];?>
                                 </td>
                                 <td>
-                                    <?php echo $res['genderAllowance']; ?>
-                                </td>
-                                <td>
                                     <?php if($res['garage']){
-                                        echo "Garage availabe. ";
+                                        echo "Garage: YES ";
                                     }else{
-                                        echo "Garage not availabe. ";
+                                        echo "Garage: NO ";
                                     }
-
+                                    echo nl2br("\n",false);
+                        
                                     if($res['bachelors']){
-                                        echo "Bachelors are Allowed";
+                                        echo "Bachelors: YES ";
                                     }else{
-                                        echo "Bachelors are not Allowed";
-                                    }?>
+                                        echo "Bachelors: NO ";
+                                    }
+                                        echo nl2br("\n",false);
+                        
+                                    if($res['lift']){
+                                        echo "Lift: YES ";
+                                    }else{
+                                        echo "Lift: NO ";
+                                    }
+                                        echo nl2br("\n",false);
+                        
+                                    if($res['security']==3){
+                                        echo "Security Guard and CC Camera: YES ";
+                                    }else if($res['security']==2){
+                                        echo "Security Guard: YES ";
+                                    }else if($res['security']==1){
+                                        echo "CC Camera: YES ";
+                                    }else{
+                                        echo "Security Guard and CC Camera: NO ";
+                                    }
+                                        echo nl2br("\n",false);
+                                    if($res['genderAllowance']==2){
+                                        echo "Allowance: only Female";
+                                    }else if($res['genderAllowance']==1){
+                                        echo "Allowance: only Male";
+                                    }else{
+                                        echo "Allowance: Both Male and Female";
+                                    }
+                                        echo nl2br("\n",false);
+                        
+                                    ?>
                                 </td>
                                 <td>
                                     <?php echo $res['houseDetails'];?>
                                 </td>
+                                 <td>
+            <form action="view_houses.php" method="post">
+              <input type="hidden" name="addFav" value="<?php echo $res['houseID'] ?>">
+              <input type="submit" name="submit" value="add to Fav">
+            </form>
+        </td>
                             </tr>
                         </tbody>
                         <?php   
