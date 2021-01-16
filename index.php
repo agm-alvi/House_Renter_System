@@ -14,8 +14,8 @@
             <ul>
                 <li class="index.php"><a href="#"> Home </a></li>
                 <li> <a href="service.php"> Service </a> </li>
-                <li> <a href="Contact.php"> About Us </a> </li>
-                <li> <a href="#"> Contact Us </a> </li>
+                <li> <a href="#"> About Us </a> </li>
+                <li> <a href="Contact.php"> Contact Us </a> </li>
                 <li> <a href="#"> Our Reviews </a> </li>
             </ul>
         </div>
