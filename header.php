@@ -14,10 +14,12 @@
 
 header{
 
-    background-image: linear-gradient(rgba(50, 130, 210, 0.9),rgba(210,130,0,0.8));
+    background-image: linear-gradient(rgba(80, 80, 80, 0.9),rgba(0,0,0,0.8));
+    box-shadow: 0px 2px 2px 5px black;
     background-size: cover;
     background-position: center;
     height: 8vh;
+    margin-bottom: 50px;
     
 }
 
@@ -70,7 +72,7 @@ ul li.home a{
             <div class= "main">
 
                 <div class="logo">
-                    <img src="h.jpg">
+                    <img src="logo.jpg">
                 </div>
 
 
@@ -78,8 +80,8 @@ ul li.home a{
                 <li class="home"><a href = "index.php"> Home </a> </li>
                 <li> <a href = "#"> Service </a> </li>
                 <li> <a href = "#"> About Us </a> </li>
-                <li> <a href = "#"> Contact Us </a> </li>
-                <li> <a href = "#"> Our Reviews </a> </li>
+                <li> <a href = "Contact.php"> Contact Us </a> </li>
+                <li> <a href = "Logout.php"> Logout </a> </li>
             </ul>
             </div>
         </header>
