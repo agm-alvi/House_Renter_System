@@ -90,7 +90,7 @@ if(isset($_POST['submit']))
                                     </td>
                                     <td>
                                         <?php echo $res['house_no']." ".$res['street_no']." ".$res['area']; 
-                                    ?> ?> </td>
+                                    ?>  </td>
                                     <td>
                                         <?php echo $res['location'];?>
                                     </td>
