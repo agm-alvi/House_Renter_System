@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat",sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .servicesheader{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0,0,0,0.4)), url(h.png);
+    height: 100vh;
+    background-size: cover;
+    padding: 60px 0;
+  }
+ 
+  .section-title{
+    text-align: center;
+    color: #ddd;
+    text-transform: uppercase;
+    font-size: 50px;
+    margin: 4%;
+  }
+
+  
+  .service{
+    max-width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #ddd;
+    cursor: pointer;
+  }
+  
+  .service-icon{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: 10px solid #82ccdd;
+    color: #82ccdd;
+    transform: rotate(45deg);
+    margin-bottom: 30px;
+    margin-top: 16px;
+    transition: 0.3s linear;
+  }
+
+  .service-title{
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .description{
+    font-size: 18px;
+
+  }
+  
+  @media screen and (max-width:960px) {
+    .servicesheader{
+      max-width: 45%;
+    }
+  }
+  
+  @media screen and (max-width:768px) {
+    .servicesheader{
+      max-width: 50%;
+    }
+  }
+  
+  @media screen and (max-width:480px) {
+    .servicesheader{
+      max-width: 100%;
+    }
+  }
+  
