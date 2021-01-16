@@ -1,0 +1,58 @@
+body {
+    background-color: aliceblue;
+}
+
+@media only screen and (max-width: 700px) {
+    body {
+        background-color: yellow;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: aqua;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    margin: 5px 0px;
+}
+
+th,
+td,
+tr {
+    border: 3px solid black;
+    padding: 5px 2px;
+}
+h1{
+    text-align: center;
+}
+input {
+    padding: 10px;
+}
+
+.loginform {
+    
+    background: rgba(0,0,0,.7);
+    /* opacity: .6; */
+    margin-left: 55%;
+    margin-top: 10%;
+    padding: 20px;
+    color: white;
+    box-shadow: -5px -6px 5px 5px #000000;
+}
+label {
+    font-size: larger;
+    color:whitesmoke;
+}
+nav {
+    margin: 25px 0px;
+}
+button {
+    background: white;
+    padding: 10px 115px;
+}
+a{
+    color: red;
+}
