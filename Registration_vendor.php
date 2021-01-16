@@ -16,7 +16,7 @@ session_destroy();
     <head>
         <meta charset="utf-8">
         <title>Vendor Registration | Find Nest</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="regStyle.css">
         <style type="text/css">
             body {
                 background-color: skyblue;
@@ -31,24 +31,24 @@ session_destroy();
     <body>
         <?php include 'header.php';?>
             <h1>Find Nest | Vendor Registration</h1>
-            <div>
+            <div class="regform">
                 <form name="LoginForms" class="" action="Registration_vendor.php" method="POST" onsubmit="return validateForm();">
-                    <label>Name:</label>
+                   <nav> <label>Name:</label>
                     <input type="text" name="fullName" value="" placeholder="Name">
                     <label id="nameError"></label>
-                    <br>
+                    </nav><nav>
                     <label>Username:</label>
                     <input type="text" name="uname" value="" placeholder="Username">
                     <label id="usernameError"></label>
-                    <br>
+                    </nav><nav>
                     <label>Password:</label>
                     <input type="password" name="psw" value="" placeholder="Password">
                     <label id="passwordError"></label>
-                    <br>
+                    </nav><nav>
                     <label>Re-type password:</label>
                     <input type="password" name="repsw" value="" placeholder="Re-type Password">
                     <label id="repasswordError"></label>
-                    <br>
+                    </nav><nav>
                     <label>Gender:</label>
                     <input type="radio" name="gender" id="gender" value="Male">
                     <label>Male</label>
@@ -57,14 +57,14 @@ session_destroy();
                     <input type="radio" name="gender" id="gender" value="Other">
                     <label>Other</label>
                     <label id="genderError"></label>
-                    <br>
+                    </nav><nav>
                     <label>Contact no:</label>
                     <input type="text" name="contact" value="" placeholder="Contact No">
                     <label id="contactError"></label>
-                    <br>
+                    </nav><nav>
                     <label>Email:</label>
                     <input type="Email" name="email" value="" placeholder="Email@example.com">
-                    <br>
+                    </nav><nav>
                     <label>Location:</label>
                     <select name="location">
                         <option value="">Select Location</option>
@@ -81,8 +81,10 @@ session_destroy();
                         <option value="Baridhara" name="location">Baridhara</option>
                     </select>
                     <label id="locationError"></label>
-                    <br>
-                    <input type="Submit" name="" value="Submit"> </form>
+                    </nav><nav>
+                    <input type="Submit" id="button" name="" value="Submit"> 
+                    </nav>
+                    </form>
             </div>
             <?php
 if(isset($_POST['uname'])){
@@ -117,6 +119,9 @@ mysqli_close($conn);
             var name = document.forms["LoginForms"]["fullName"].value;
             var username = document.forms["LoginForms"]["uname"].value;
             var password = document.forms["LoginForms"]["psw"].value;
+            
+            var repass = document.forms["LoginForms"]["repsw"].value;
+            
             var contact = document.forms["LoginForms"]["contact"].value;
             var gender = document.forms["LoginForms"]["gender"].value;
             var location = document.forms["LoginForms"]["location"].value;
@@ -148,6 +153,11 @@ mysqli_close($conn);
                     document.getElementById('passwordError').innerHTML = "Password Length must be within 8-32 chars";
                 }
             }
+            if(repass!=password)
+                {
+                     document.getElementById('repasswordError').innerHTML = "Password doesn't Match";
+                flag = false;
+                }
             if (gender == "") {
                 document.getElementById('genderError').innerHTML = "Gender must be selected";
                 flag = false;
