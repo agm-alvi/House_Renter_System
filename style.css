@@ -28,12 +28,6 @@ tr {
 h1{
     text-align: center;
 }
-footer {
-    font-weight: bold;
-    border: 2px dotted red;
-    box-shadow: 2px 2px 5px 5px red;
-    margin-top: 15px;
-}
 
 .form {
     margin-left: 50px;
