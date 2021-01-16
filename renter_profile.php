@@ -11,14 +11,14 @@ if(empty($_SESSION["username"]))
     header('Location: admin_profile.php');
   }
 }
-
+$username = $_SESSION["username"];
 $retrieve = "SELECT * FROM renters r WHERE r.username = '".$username."'";
 $retrieve = mysqli_query($conn, $retrieve);
 
 $ret = mysqli_fetch_array($retrieve);
         
 $rid  =  $ret['renterID']; 
-
+$fullname = $ret['fullname'];
 
 ?>
     <!DOCTYPE html>
@@ -44,7 +44,7 @@ $rid  =  $ret['renterID'];
     <body>
         <?php include 'header.php';?>
             <h1>Find Nest | Profile</h1>
-            <h1>Welcome <?php echo $username?> |</h1>
+            <h1>Welcome <?php echo $fullname?> |</h1>
             <div>
                 <ol>
                     <li><a href="view_profile_renter.php" target="_blank">View Profile</a></li>
