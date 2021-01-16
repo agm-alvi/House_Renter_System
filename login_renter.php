@@ -6,7 +6,7 @@ if(!empty($_SESSION["username"]))
       {
         header('Location: admin_profile.php');
       }else{
-        header('Location: renters_profile.php');
+        header('Location: renter_profile.php');
       }
 }
 require 'connection.php';
@@ -25,7 +25,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
       {
         header('Location: admin_profile.php');
       }else{
-        header('Location: renters_profile.php');
+        header('Location: renter_profile.php');
       }
     }else{
       echo "<script>alert('wrong username & Password')</script>";
