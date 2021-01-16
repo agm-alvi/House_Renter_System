@@ -38,7 +38,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
 
     <head>
         <title>Renter Log In | Find Nest</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="loginstyle.css">
         <style type="text/css">
             body {
                 background-color: lightgreen;
@@ -53,16 +53,21 @@ if(isset($_POST['username']) && isset($_POST['password']))
     <body>
         <?php include 'header.php';?>
             <h1>Find Nest | Renter Log In</h1>
-            <div>
+            <div class="loginform">
                 <form action="login_renter.php" method="post">
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" name="username" required placeholder="Username">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required placeholder="Password">
-                    <input type="checkbox" onclick="myFunction()"> &nbsp;Show Password
-                    <button type="submit">Log In</button>
+                    <nav>
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username" required placeholder="Username">
+                    </nav>
+                    <nav>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required placeholder="Password">
+                        <input type="checkbox" onclick="myFunction()"> &nbsp;Show Password </nav>
+                    <nav>
+                        <button type="submit">Log In</button>
+                    </nav>
                 </form>
-                <p>Return to <a href="index.php">Home Page</a></p>
+                <p>Not Registered Yet? Get <a href="Registration_renter.php">Registered Now.</a></p>
             </div>
     </body>
 
