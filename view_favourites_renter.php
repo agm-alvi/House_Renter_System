@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $result);
 $msg="";
 if(isset($_POST['submit']))
 {
-  $hid =$_POST['deleteFav'];
+  $fid =$_POST['deleteFav'];
   $deleteFav = "DELETE FROM favourites WHERE fID= '$hid'";
   if ($conn->query($deleteFav) === TRUE) {
     $msg="successfully Deleted from Favorites";
@@ -96,7 +96,7 @@ if(isset($_POST['submit']))
                                     </td>
                                     <td>
                                         <form action="view_fabourite_renter.php" method="post">
-                                            <input type="hidden" name="deleteFav" value="<?php echo $res['houseID'] ?>">
+                                            <input type="hidden" name="deleteFav" value="<?php echo $res['fID'] ?>">
                                             <input type="submit" name="submit" value="Delete From Fav"> </form>
                                     </td>
                                 </tr>
