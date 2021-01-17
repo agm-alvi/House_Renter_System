@@ -11,6 +11,7 @@ if(empty($_SESSION["username"]))
     header('Location: admin_profile.php');
   }
 }
+$username = $_SESSION["username"];
 
 $retrieve = "SELECT * FROM vendors r WHERE r.username = '".$username."'";
 $retrieve = mysqli_query($conn, $retrieve);
@@ -18,7 +19,7 @@ $retrieve = mysqli_query($conn, $retrieve);
 $ret = mysqli_fetch_array($retrieve);
         
 $rid  =  $ret['vendorID']; 
-
+$fullname = $ret['fullname'];
 
 ?>
     <!DOCTYPE html>
@@ -44,14 +45,14 @@ $rid  =  $ret['vendorID'];
     <body>
         <?php include 'header.php';?>
             <h1>Find Nest | Profile</h1>
-            <h1>Welcome <?php echo $username?> |</h1>
+            <h1>Welcome <?php echo $fullname?> |</h1>
             <div>
                 <ol>
                     <li><a href="view_profile_vendor.php" target="_blank">View Profile</a></li>
                     <li><a href="edit_profile_vendor.php" target="_blank">Edit Profile</a></li>
                 
                     <li><a href="addHouse.php" target="_blank">Register a House</a></li>
-                    <li><a href="view_favourites_vendor.php" target="_blank">View Favourites</a></li>
+                    <li><a href="view_favourites_vendor.php" target="_blank">View Bookings</a></li>
                 </ol>
             </div>
             <?php include 'footer.php'; ?>
