@@ -25,7 +25,7 @@ $msg="";
 if(isset($_POST['submit']))
 {
   $fid =$_POST['deleteFav'];
-  $deleteFav = "DELETE FROM favourites WHERE fID= '$hid'";
+  $deleteFav = "DELETE FROM favourites WHERE fID= '$fid'";
   if ($conn->query($deleteFav) === TRUE) {
     $msg="successfully Deleted from Favorites";
   }
@@ -95,8 +95,10 @@ if(isset($_POST['submit']))
                                         <?php echo $res['location'];?>
                                     </td>
                                     <td>
-                                        <form action="view_fabourite_renter.php" method="post">
-                                            <input type="hidden" name="deleteFav" value="<?php echo $res['fID'] ?>">
+                                        <form action="view_favourites_renter.php" method="post">
+                                            <input type="hidden" name="deleteFav" value="<?php 
+$fid = $res['fID'];
+                                            echo $fid;  ?>">
                                             <input type="submit" name="submit" value="Delete From Fav"> </form>
                                     </td>
                                 </tr>
