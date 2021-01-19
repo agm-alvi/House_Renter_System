@@ -1,14 +1,20 @@
 <?php
 include 'connection.php';
-/*
+
 session_start();
-if(!(empty($_SESSION["username"]))
+if(empty($_SESSION["username"]))
 {
-session_destroy();
-}else{
-    header('Location: login_vendor.php');
-  }
-*/
+  header('Location: index.php');
+}
+
+$username = $_SESSION["username"];
+$retrieve = "SELECT * FROM vendors v WHERE v.username = '".$username."'";
+$retrieve = mysqli_query($conn, $retrieve);
+
+$ret = mysqli_fetch_array($retrieve);
+        
+$vid  =  $ret['vendorID'];   
+
 ?>
     <!DOCTYPE html>
     <html lang="en" dir="ltr">
@@ -39,7 +45,8 @@ session_destroy();
                 <form name="addHouseForms" class="form" action="addHouse.php" method="POST" onsubmit="return validateForm();">
                     <nav>
                         <label>Vendor ID:</label>
-                        <input type="text" name="vendorID" value="" placeholder="Vendor ID">
+                        <input type="text" name="vendorID" value="<?php
+                                echo $vid?>" disabled>
                         <label id="vidError"></label>
                     </nav>
                     <nav>
@@ -93,30 +100,51 @@ session_destroy();
                     </nav>
                     <nav>
                         <label>Bachelors Allowed:</label>
-                        <input type="radio" name="bachelor" value="TRUE">
+                        <input type="radio" name="bachelor" value="1">
                         <label>Yes</label>
-                        <input type="radio" name="bachelor" value="FALSE">
+                        <input type="radio" name="bachelor" value="0">
                         <label>No</label>
                         <label id="bachelorError"></label>
                     </nav>
                     <nav>
                         <label>Garage Availabe:</label>
-                        <input type="radio" name="garage" value="TRUE">
+                        <input type="radio" name="garage" value="1">
                         <label>Yes</label>
-                        <input type="radio" name="garage" value="FALSE">
+                        <input type="radio" name="garage" value="0">
                         <label>No</label>
                         <label id="garageError"></label>
                     </nav>
                     <nav>
+                        <label>Lift Availabe:</label>
+                        <input type="radio" name="lift" value="1">
+                        <label>Yes</label>
+                        <input type="radio" name="lift" value="0">
+                        <label>No</label>
+                        <label id="liftError"></label>
+                    </nav>
+                    <nav>
                         <label>Gender Allowance:</label>
-                        <input type="radio" name="genderAllowance" value="Both Male and Female">
+                        <input type="radio" name="genderAllowance" value="0">
                         <label>Both Male and Female</label>
-                        <input type="radio" name="genderAllowance" value="Only Male">
+                        <input type="radio" name="genderAllowance" value="1">
                         <label>Only Male</label>
-                        <input type="radio" name="genderAllowance" value="Only Female">
+                        <input type="radio" name="genderAllowance" value="2">
                         <label>Only Female</label>
                         <label id="genderAllowanceError"></label>
                     </nav>
+                    <nav>
+                        <label>Security Info:</label>
+                        <input type="radio" name="security" value="0">
+                        <label>No Security</label>
+                        <input type="radio" name="security" value="1">
+                        <label>Only CC Camera</label>
+                        <input type="radio" name="security" value="2">
+                        <label>Only Security Guard</label>
+                        <input type="radio" name="security" value="3">
+                        <label>Both Security Guard and CC Camera</label>
+                        <label id="securityError"></label>
+                    </nav>
+                    
                     <nav>
                         <label>House Details:</label>
                         <input type="text" name="houseDetails" value="" placeholder="Notes about House">
@@ -127,22 +155,23 @@ session_destroy();
                 </form>
             </div>
             <?php
-if(isset($_POST['vendorID'])){
-$vendorID = $_POST['vendorID'];
+if(isset($_POST['hType'])){
 $hType = $_POST['hType'];
 $houseNo = $_POST['houseNo'];
 $streetNo = $_POST['streetNo'];
 $area = $_POST['area'];
 $location = $_POST['location'];
 $bachelor = $_POST['bachelor'];
-$garage = $_POST['garage']; 
+$garage = $_POST['garage'];
+$lift = $_POST['lift'];
+$security = $_POST['security']; 
 $gAllow = $_POST['genderAllowance'];  
 $houseDetails = $_POST['houseDetails'];  
 
+$sql = "failed";
 
-
-if($vendorID != ""){
-	if ((mysqli_query($conn,  "INSERT INTO houselist( houseType, houseDetails, house_no, street_no, area, location, garage, bachelors, genderAllowance, vID) VALUES ('$hType','$houseDetails','$houseNo','$streetNo','$area','$location',$garage,$bachelor,'$gAllow','$vendorID')")) && (mysqli_query($conn,  "UPDATE vendors SET houseListed=houseListed+1 WHERE vendorID= '$vendorID'"))) {
+if($hType != ""){
+	if ((mysqli_query($conn,  "INSERT INTO `houselist`(`houseType`, `houseDetails`, `house_no`, `street_no`, `area`, `location`, `garage`, `bachelors`, `lift`, `security`, `genderAllowance`, `vID`) VALUES  ('$hType','$houseDetails','$houseNo','$streetNo','$area','$location',$garage,$bachelor,'$lift', '$security', $gAllow','".$vid."')")) && (mysqli_query($conn,  "UPDATE vendors SET houseListed=houseListed+1 WHERE vendorID= '$vid'"))) {
 	echo "New House added successfully";
 	} else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
