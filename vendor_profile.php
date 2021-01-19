@@ -52,7 +52,7 @@ $fullname = $ret['fullname'];
                     <li><a href="edit_profile_vendor.php" target="_blank">Edit Profile</a></li>
                 
                     <li><a href="addHouse.php" target="_blank">Register a House</a></li>
-                    <li><a href="view_favourites_vendor.php" target="_blank">View Bookings</a></li>
+                    <li><a href="view_houseList_vendor.php" target="_blank">View Bookings</a></li>
                 </ol>
             </div>
             <?php include 'footer.php'; ?>
