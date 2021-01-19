@@ -4,7 +4,7 @@ include 'connection.php';
 session_start();
 if(empty($_SESSION["username"]))
 {
-  header('Location: login_renter.php');
+  header('Location: index.php');
 }
 
 $username = $_SESSION["username"];
