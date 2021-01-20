@@ -80,7 +80,7 @@ $email = $_POST['email'];
 $comments = $_POST['comments'];
 
 if($name != ""){
-	if (mysqli_query($conn,  "INSERT INTO Contact (name, email, comments) VALUES ('$name', '$email', '$comments')")) {
+	if (mysqli_query($conn,  "INSERT INTO contact (name, email, comments) VALUES ('$name', '$email', '$comments')")) {
 	echo "Thanks for your precious Review";
 	} else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
