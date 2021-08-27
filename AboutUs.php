@@ -19,9 +19,6 @@
             .rp{
             	width: 30%;
             }
-            .rs{
-            	width: 5%;
-            }
             table{
             	width: 100%;
             }
