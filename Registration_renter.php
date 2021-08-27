@@ -75,6 +75,7 @@ session_destroy();
                         <label>Location:</label>
                         <select name="location">
                             <option value="">Select Location</option>
+                            <option value="Siddheswari" name="location">Siddheswari</option>
                             <option value="Old Dhaka" name="location">Old Dhaka</option>
                             <option value="Uttara" name="location">Uttara</option>
                             <option value="Rampura" name="location">Rampura</option>

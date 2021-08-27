@@ -6,7 +6,7 @@ if(!empty($_SESSION["username"]))
       {
         header('Location: admin_profile.php');
       }else{
-        header('Location: renter_profile.php');
+        header('Location: view_profile_renter.php');
       }
 }
 require 'connection.php';
