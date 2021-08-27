@@ -25,7 +25,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
       {
         header('Location: admin_profile.php');
       }else{
-        header('Location: renter_profile.php');
+        header('Location: view_profile_renter.php');
       }
     }else{
       echo "<script>alert('wrong username & Password')</script>";

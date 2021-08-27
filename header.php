@@ -78,10 +78,9 @@ ul li.home a{
 
             <ul>
                 <li class="home"><a href = "index.php"> Home </a> </li>
-                <li> <a href = "#"> Service </a> </li>
-                <li> <a href = "#"> About Us </a> </li>
-                <li> <a href = "Contact.php"> Contact Us </a> </li>
-                <li> <a href = "Logout.php"> Logout </a> </li>
+                <li> <a href="Services.php"> Service </a> </li>
+                <li> <a href="AboutUs.php"> About Us </a> </li>
+                <li> <a href="Contact.php"> Contact Us </a> </li>
             </ul>
             </div>
         </header>

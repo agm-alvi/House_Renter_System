@@ -54,6 +54,7 @@ $fullname = $ret['fullname'];
                     <li><a href="Dashboard.php" target="_blank">View Reviews</a></li>
                 </ol>
             </div>
+            <a href="Logout.php">Logout</a>
             <?php include 'footer.php'; ?>
     </body>
 

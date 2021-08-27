@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House Rental System</title>
+    <title>Home Rental Platform</title>
     <link rel="stylesheet" type="text/css" href="homepagestyle.css"> </head>
 
 <body>
     <header>
         <div class="main">
-            <div class="logo"> <img src="h.jpg"> </div>
+            <div class="logo"> <img src="logo.jpg"> </div>
             <ul>
                 <li class="index.php"><a href="#"> Home </a></li>
-                <li> <a href="service.php"> Service </a> </li>
-                <li> <a href="#"> About Us </a> </li>
+                <li> <a href="Services.php"> Service </a> </li>
+                <li> <a href="AboutUs.php"> About Us </a> </li>
                 <li> <a href="Contact.php"> Contact Us </a> </li>
                 <li> <a href="#"> Our Reviews </a> </li>
             </ul>
