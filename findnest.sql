@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2021 at 01:21 PM
+-- Generation Time: Sep 01, 2021 at 01:54 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -31,6 +31,20 @@ CREATE TABLE `contact` (
   `name` varchar(10) NOT NULL,
   `email` varchar(20) NOT NULL,
   `comments` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `creators`
+--
+
+CREATE TABLE `creators` (
+  `id` int(5) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `nsu_id` int(20) NOT NULL,
+  `position` varchar(50) NOT NULL,
+  `img` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -109,6 +123,19 @@ CREATE TABLE `vendors` (
 --
 
 --
+-- Indexes for table `creators`
+--
+ALTER TABLE `creators`
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- Indexes for table `favourites`
+--
+ALTER TABLE `favourites`
+  ADD PRIMARY KEY (`fID`),
+  ADD UNIQUE KEY `fID` (`fID`);
+
+--
 -- Indexes for table `houselist`
 --
 ALTER TABLE `houselist`
@@ -132,6 +159,12 @@ ALTER TABLE `vendors`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `favourites`
+--
+ALTER TABLE `favourites`
+  MODIFY `fID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `houselist`
