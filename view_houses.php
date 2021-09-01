@@ -148,6 +148,8 @@ if(isset($_POST['submit']))
                     ?>
                         </table>
                     </div>
+
+                    <a href="view_profile_renter.php">Go Back</a>
                     <?php include 'footer.php'; ?>
     </body>
 

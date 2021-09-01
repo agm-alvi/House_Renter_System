@@ -72,7 +72,7 @@ ul li.home a{
             <div class= "main">
 
                 <div class="logo">
-                    <img src="logo.jpg">
+                    <img src="logo.png">
                 </div>
 
 

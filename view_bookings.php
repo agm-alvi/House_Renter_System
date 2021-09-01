@@ -25,7 +25,7 @@ $result = mysqli_query($conn, $result);
         <link rel="stylesheet" type="text/css" href="style.css">
         <style type="text/css">
             body {
-                background-color: navajowhite;
+                background-color: aliceblue;
             }
             
             table {

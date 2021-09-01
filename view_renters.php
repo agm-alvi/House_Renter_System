@@ -91,6 +91,9 @@ $result = mysqli_query($conn, $result);
                     ?>
                 </table>
             </div>
+
+            <a href="admin_profile.php">Go Back</a>
+            <br>
             <?php include 'footer.php'; ?>
     </body>
 
